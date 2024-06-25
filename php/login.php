@@ -33,13 +33,13 @@ function validateLoginCredentials($mail, $password)
     $db_instance = establishDatabaseConnection();
 
     // Förbered våran sql-query
-    if ($customer_fetch_query = mysqli_prepare($db_instance, "SELECT customer_id FROM customers WHERE mail=? AND password=?")) {
+    if ($customer_fetch_query = mysqli_prepare($db_instance, "SELECT customer_id, password FROM customers WHERE mail=?")) {
 
-        mysqli_stmt_bind_param($customer_fetch_query, "ss", $mail, $password);
+        mysqli_stmt_bind_param($customer_fetch_query, "s", $mail);
 
         mysqli_stmt_execute($customer_fetch_query);
 
-        mysqli_stmt_bind_result($customer_fetch_query, $result_id);
+        mysqli_stmt_bind_result($customer_fetch_query, $result_id, $result_hashed_password);
 
         while (mysqli_stmt_fetch($customer_fetch_query)) {
             sleep(0);
@@ -52,7 +52,12 @@ function validateLoginCredentials($mail, $password)
     mysqli_close($db_instance);
 
     if (!$result_id) {
-        echo "<h2>Kontot du försökte logga in med existerar inte alternativt så har du angett felaktiva inloggningsuppgifter.</h2>";
+        echo "<h2>Kontot du försökte logga in med existerar inte</h2>";
+        return false;
+    }
+
+    if (!password_verify($password, $result_hashed_password)) {
+        echo "<h2>Lösenordet du angivit är felaktikt, försök igen</h2>";
         return false;
     }
 

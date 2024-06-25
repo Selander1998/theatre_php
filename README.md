@@ -85,6 +85,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## TODO
 
-- Secure password hashing
 - Name display header on login
 - Implement PHP session management

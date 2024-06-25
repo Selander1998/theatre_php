@@ -16,7 +16,7 @@ function establishDatabaseConnection()
 {
 
     // Ladda in .env fil och hämta användardata för databasinloggning pga att jag kommer råka skicka med lösenord här annars
-    // Dessa kräver OOP-syntax (Object-oriented programming syntax) via det phpdotenv bibliotek vi använder
+    // Dessa kräver OOP-syntax (Object-oriented programming syntax) pga det phpdotenv bibliotek vi använder
     $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
     $dotenv->safeLoad();
 

@@ -38,8 +38,10 @@ function addCustomerToDatabase($customer_name, $customer_mail, $customer_phone_n
 	// Förbered våran sql-query
 	$add_customer_query = mysqli_prepare($db_instance, "INSERT INTO customers (name, mail, phone_number, password) VALUES (?, ?, ?, ?)");
 
+	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
 	// Bind våra parametrar till våran query, ssi indikerar att vi har string, string, integer som data
-	mysqli_stmt_bind_param($add_customer_query, "ssss", $customer_name, $customer_mail, $customer_phone_number, $password);
+	mysqli_stmt_bind_param($add_customer_query, "ssss", $customer_name, $customer_mail, $customer_phone_number, $hashed_password);
 
 	// Kör våran query
 	mysqli_stmt_execute($add_customer_query);
