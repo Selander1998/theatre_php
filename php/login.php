@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include "database.php";
 
 // Kontrollera om formuläret har skickats
@@ -16,7 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($is_valid) {
             $customer_data = getCustomerData($mail);
 
-            echo "<h2>Välkommen tillbaka " . $customer_data["name"] . "</h2>";
+            $_SESSION['user_id'] = $customer_data["id"];
+            $_SESSION['user_name'] = $customer_data['name'];
+            $_SESSION['user_phone_number'] = $customer_data['phone_number'];
+
+            header("Location: home.php");
+            exit;
         }
     } else {
         // Meddela att alla fält måste vara ifyllda (Detta är ett edge-case, bör inte tillåtas utav html-forms?)
