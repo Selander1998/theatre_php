@@ -7,47 +7,52 @@
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<h1>Inloggning</h1>
-		<form action="../php/login.php" method="post">
-			<label for="email">Email</label>
-			<input type="text" id="email" name="email" required /><br /><br />
+		<div class="form-container">
+			<!--Skapa formulärets interface för inloggning -->
+			<form action="../php/login.php" method="post">
+				<h1>Logga in</h1>
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" required /><br /><br />
 
-			<label for="password">Lösenord</label>
-			<input type="password" id="password" name="password" required /><br /><br />
+				<label for="password">Lösenord</label>
+				<input type="password" id="password" name="password" required /><br /><br />
 
-			<input type="submit" value="Logga in" />
-		</form>
+				<input type="submit" value="Logga in" />
+			</form>
+		</div>
 
-		<h1>Registrera konto</h1>
-		<!--Skapa formulärets interface -->
-		<form action="../php/register.php" method="post">
-			<!-- Fält för förnamn -->
-			<label for="firstname">Förnamn</label>
-			<input type="text" id="firstname" name="firstname" required />
-			<br /><br />
+		<div class="form-container">
+			<!--Skapa formulärets interface för kontoregistrering -->
+			<form action="../php/register.php" method="post">
+				<h1>Registrera konto</h1>
+				<!-- Fält för förnamn -->
+				<label for="firstname">Förnamn</label>
+				<input type="text" id="firstname" name="firstname" required />
+				<br /><br />
 
-			<!-- Fält för efternamn -->
-			<label for="lastname">Efternamn</label>
-			<input type="text" id="lastname" name="lastname" required />
-			<br /><br />
+				<!-- Fält för efternamn -->
+				<label for="lastname">Efternamn</label>
+				<input type="text" id="lastname" name="lastname" required />
+				<br /><br />
 
-			<!-- Fält för mailadress -->
-			<label for="email">Mail-adress</label>
-			<input type="text" id="email" name="email" required />
-			<br /><br />
+				<!-- Fält för mailadress -->
+				<label for="email">Mail-adress</label>
+				<input type="text" id="email" name="email" required />
+				<br /><br />
 
-			<!-- Fält för lösenord -->
-			<label for="password">Lösenord</label>
-			<input type="password" id="password" name="password" required />
-			<br /><br />
+				<!-- Fält för lösenord -->
+				<label for="password">Lösenord</label>
+				<input type="password" id="password" name="password" required />
+				<br /><br />
 
-			<!-- Fält för telefonnumer -->
-			<label for="phone_number">Telefonnummer</label>
-			<input type="text" id="phone_number" name="phone_number" required />
-			<br /><br />
+				<!-- Fält för telefonnumer -->
+				<label for="phone_number">Mobilnummer</label>
+				<input type="text" id="phone_number" name="phone_number" required />
+				<br /><br />
 
-			<!-- Registreringsknapp -->
-			<input type="submit" value="Registrera" />
-		</form>
+				<!-- Registreringsknapp -->
+				<input type="submit" value="Registrera" />
+			</form>
+		</div>
 	</body>
 </html>

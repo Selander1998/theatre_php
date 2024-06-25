@@ -85,5 +85,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## TODO
 
-- Name display header on login
-- Implement PHP session management
+- Code comments...
+- Make it look somewhat presentable with proper CSS
