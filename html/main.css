@@ -1,3 +1,4 @@
+/* Sätt font och centrera vårat content i mitten utav sidan */
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #ffffff;
@@ -9,6 +10,7 @@ body {
 	height: 100vh;
 }
 
+/* Hantera storlek och text för våra formulär */
 .form-container {
 	text-align: center;
 	max-width: 400px;
@@ -17,6 +19,7 @@ body {
 	padding: 20px;
 }
 
+/* Styling för våra formulär */
 form {
 	background-color: #ffffff;
 	padding: 20px;
@@ -26,12 +29,14 @@ form {
 	margin-bottom: 20px;
 }
 
+/* Se till att våra inputs är alignad med deras label */
 form label {
 	display: inline-block;
 	width: 26%;
 	text-align: left;
 }
 
+/* Styling för inloggning/registreringsknapparna */
 input[type="submit"] {
 	width: 45%;
 	padding: 10px;

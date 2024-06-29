@@ -26,7 +26,6 @@ This is a school project, any contributions will not be applied. This is purely 
 
    ```bash
    git clone https://github.com/Selander1998/theatre_php.git
-   cd theatre_php
    ```
 
 2. **Database Setup**
@@ -84,6 +83,3 @@ This is a school project, any contributions will not be applied. This is purely 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## TODO
-
-- Code comments...
-- Make it look somewhat presentable with proper CSS

@@ -35,6 +35,7 @@ function establishDatabaseConnection()
 }
 ;
 
+// Funktion för att hämta databasens data för kunder
 function getCustomerData($customer_mail)
 {
 
@@ -44,28 +45,36 @@ function getCustomerData($customer_mail)
     // Förbered våran sql-query
     if ($customer_fetch_query = mysqli_prepare($db_instance, "SELECT customer_id, name, phone_number FROM customers WHERE mail=?")) {
 
+        // Bind parametern för våran queries mail
         mysqli_stmt_bind_param($customer_fetch_query, "s", $customer_mail);
 
+        // Kör våran query
         mysqli_stmt_execute($customer_fetch_query);
 
+        // Bind våran queries resultat till variablerna result_
         mysqli_stmt_bind_result($customer_fetch_query, $result_id, $result_name, $result_pnumber);
 
+        // Under tiden vi väntar på svar från databasen, låt programmet pausas
         while (mysqli_stmt_fetch($customer_fetch_query)) {
             sleep(0);
         }
 
+        // Stäng processen för våran query
         mysqli_stmt_close($customer_fetch_query);
     }
     ;
 
+    // Stäng anslutning till databasen
     mysqli_close($db_instance);
 
+    // Sätt våra return-värden till resultatet från våran query
     $customer_data = array(
         "id" => $result_id,
         "name" => $result_name,
         "phone_number" => $result_pnumber
     );
 
+    // Returnera våran array med values
     return $customer_data;
 
 }

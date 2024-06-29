@@ -15,15 +15,18 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
+    <title>Välkommen</title>
 </head>
 
 <body>
     <header>
+        <!-- Visa välkommstmeddelande för användaren med deras namn -->
         <h1>
             Välkommen tillbaka, <?php echo htmlspecialchars($_SESSION['user_name']); ?>
         </h1>
     </header>
+
+    <!-- Skapa paragraf för att påvisa att användaren är inloggad -->
     <p>Du är nu inloggad</p>
 </body>
 
