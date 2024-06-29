@@ -82,5 +82,3 @@ This is a school project, any contributions will not be applied. This is purely 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## TODO
