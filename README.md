@@ -77,6 +77,7 @@ This is a school project, any contributions will not be applied. This is purely 
 ## Security Considerations
 
 - **Prepared Statements**: SQL queries use prepared statements to prevent SQL injection attacks.
+- **Password Hashing**: Passwords are hashed before being insertet into the database to ensure password protection.
 
 ## License
 
